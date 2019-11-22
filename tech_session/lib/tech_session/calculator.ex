@@ -11,7 +11,7 @@ defmodule Calculator do
     a * b
   end
 
-  # foo(bar(translate(format_value(select_value(state)))))
+  # foo(bar(translate(format(select_item(state)))))
 
-  # state |> select_value() |> format_value() |> translate() |> bar() |> foo()
+  # state |> select_item() |> format() |> translate() |> bar() |> foo()
 end

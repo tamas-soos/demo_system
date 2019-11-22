@@ -30,9 +30,9 @@ export function positionIsland({ player, key, row, col }, state) {
     reply_error(state, "Overlapping island");
   }
 
-  const updateState = update_rules(update_board(state, player, board), rules);
+  const newState = update_rules(update_board(state, player, board), rules);
 
-  return reply_success(updateState, "Ok");
+  return reply_success(newState, "Ok");
 }
 
 //
@@ -63,9 +63,9 @@ export function positionIsland({ player, key, row, col }, state) {
     const island = Island.new(key, coordinate);
     const board = Board.position_island(board, key, island);
 
-    const updateState = update_rules(update_board(state, player, board), rules);
+    const newState = update_rules(update_board(state, player, board), rules);
 
-    return reply_success(updateState, "Ok");
+    return reply_success(newState, "Ok");
   } catch (error) {
     return reply_error(state, error);
   }
